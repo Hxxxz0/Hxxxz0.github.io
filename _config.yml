@@ -41,36 +41,34 @@ author:
   # Repositories and software development
   #bitbucket        : # Username - Update with your username on the site
   #codepen          : # Username
-  dribbble         : # Username
+  #dribbble         : # Username
   github           : "Hxxxz0"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+ # kaggle           : # Username  
+  #stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # URL
+  #facebook         : # Username
+  #flickr           : # Username
+  #foursquare       : # Username
+  #goodreads        : # Username
+  #google_plus      : # Username
+  ##keybase          : # Username
+  #instagram        : # Username
+  #lastfm           : # Username
+ #linkedin         : # Username
+  #mastodon         : # URL
+ ##pinterest        : # Username
+  #soundcloud       : # Username
+  #steam            : # Username
+  #Etelegram         : # URL
+ # tumblr           : # Username
+ # twitter          : # Username for X / Twitter
+#  vine             : # Username
+ # weibo            : # Username
+ # wikipedia        : # Username
+ # xing             : # Username
+ # youtube          : # Username
+  zhihu            : "https://www.zhihu.com/people/a8bea62e294a4b1c38d7e8180e4ad3bb"# URL
 
 
 # Site Settings
