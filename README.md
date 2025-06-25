@@ -1,41 +1,175 @@
 
-# Academic Pages
+# 🚀 Haozhe Jia's Personal Website | 贾浩哲的个人主页
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+<div align="center">
 
-Academic Pages is a Github Pages template for academic websites.
+[![Website](https://img.shields.io/website?url=https%3A%2F%2FHxxxz0.github.io&style=for-the-badge&logo=github)](https://Hxxxz0.github.io)
+[![GitHub Stars](https://img.shields.io/github/stars/Hxxxz0/Hxxxz0.github.io?style=for-the-badge&logo=github)](https://github.com/Hxxxz0/Hxxxz0.github.io/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Hxxxz0/Hxxxz0.github.io?style=for-the-badge&logo=github)](https://github.com/Hxxxz0/Hxxxz0.github.io/network)
+[![Last Commit](https://img.shields.io/github/last-commit/Hxxxz0/Hxxxz0.github.io?style=for-the-badge&logo=github)](https://github.com/Hxxxz0/Hxxxz0.github.io/commits/master)
 
+**🔬 AI Researcher | 🎓 Shandong University | 🌟 Generative Models Enthusiast**
 
-# Getting Started
+[🌐 Visit Website](https://Hxxxz0.github.io) • [📧 Contact](mailto:202322120230@mail.sdu.edu.cn) • [📖 CV](https://Hxxxz0.github.io/cv/)
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+</div>
 
-See more info at https://academicpages.github.io/
+---
 
-## Running Locally
+## 👨‍🔬 About This Website
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+Welcome to my personal academic website! This site showcases my journey as an AI researcher at Shandong University, featuring my research work in **generative models**, **computer vision**, and **AI-driven medical education**.
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+### 🌟 Highlights
 
+- 🔬 **4 Published Papers** in AI and machine learning
+- 🚀 **2 Major Projects** including AI-XR medical education platform
+- 🏆 **Multiple Awards** including Innovation Competition Gold Medal
+- 💻 **Open Source Contributions** to the AI community
 
-# Maintenance 
+## 🎯 Research Focus
 
-Bug reports and feature requests to the template  should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+```python
+research_interests = {
+    "Generative Models": ["Diffusion Models", "VAE", "GAN", "Flow Matching"],
+    "Computer Vision": ["Image Generation", "Motion Synthesis", "Multi-modal Learning"],
+    "NLP": ["Text-to-Motion", "Semantic Alignment", "Large Language Models"],
+    "Applications": ["Medical Education", "Wireless Communication", "XR Technology"]
+}
+```
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+## 📚 Featured Publications
 
-## Bugfixes and enhancements
+### 🔥 Latest Papers (2024-2025)
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+| Title | Venue | Links |
+|-------|-------|-------|
+| **Free-T2M**: Frequency Enhanced Text-to-Motion Diffusion Model | arXiv 2025 | [📄 Paper](https://arxiv.org/abs/2501.18232) |
+| **RMDM**: Radio Map Diffusion Model with Physics Informed | arXiv 2025 | [📄 Paper](https://arxiv.org/abs/2501.19160) |
+| **DCTdiff**: Image Generative Modeling in DCT Space | arXiv 2024 | [📄 Paper](https://arxiv.org/abs/2412.15032) |
+| **ANT**: Adaptive Neural Temporal-Aware Text-to-Motion Model | arXiv 2024 | [📄 Paper](https://arxiv.org/abs/2506.02452) |
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+## 🚀 Featured Projects
+
+### 🏥 灵枢智镜 (LingShu ZhiJing)
+> **AI-Driven XR Medical Education Platform**
+
+An innovative platform combining generative AI with XR technology to revolutionize medical education.
+
+**🎯 Impact**: 40% improvement in learning efficiency, serving 1000+ medical students
+
+**🏆 Awards**: 
+- 🥇 China International College Students' Innovation and Entrepreneurship Competition - **Gold Medal**
+- 🏅 Best Technical Innovation Award
+
+### 📡 RadioFlow
+> **Intelligent Radio Map Generation Framework**
+
+Physics-informed diffusion model for 5G/6G network optimization with 8x faster generation speed.
+
+**🎯 Impact**: 35% improvement in prediction accuracy, 25% coverage optimization
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+</div>
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=Hxxxz0&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="GitHub Stats" height="170"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hxxxz0&layout=compact&theme=radical" alt="Top Languages" height="170"/>
+
+</div>
+
+## 🏆 Achievements & Awards
+
+- 🥇 **China International College Students' Innovation and Entrepreneurship Competition Gold Medal** (2025)
+- 🏅 **MCM Meritorious Winner** (2025)
+- 🥇 **Mathematical Modeling Competition Provincial First Prize** (2024)
+- 📜 **Excellent Project Recognition** - Ministry of Education Industry-University Cooperation
+
+## 🌐 Website Features
+
+This website includes several cool and interactive features:
+
+### ✨ Cool Features
+- 🎨 **Modern Gradient Design** - Beautiful visual aesthetics
+- 📱 **Fully Responsive** - Perfect on all devices
+- 🚀 **Fast Loading** - Optimized performance
+- 🎯 **Interactive Elements** - Engaging user experience
+- 🌙 **Dark Mode Support** - Easy on the eyes
+- 📊 **Dynamic Content** - Real-time updates
+
+### 🛠️ Technical Features
+- Built with **Jekyll** and **GitHub Pages**
+- **SEO Optimized** for better discoverability
+- **Accessibility Compliant** (WCAG guidelines)
+- **Clean Code Structure** for easy maintenance
+
+## 🚀 Local Development
+
+Want to run this website locally? Here's how:
+
+```bash
+# Clone the repository
+git clone https://github.com/Hxxxz0/Hxxxz0.github.io.git
+cd Hxxxz0.github.io
+
+# Install dependencies
+bundle install
+
+# Serve locally
+bundle exec jekyll serve
+
+# Open http://localhost:4000 in your browser
+```
+
+## 📈 Future Plans
+
+- [ ] 🤖 AI-powered chatbot for research Q&A
+- [ ] 📊 Interactive research timeline
+- [ ] 🎮 3D visualization of research projects
+- [ ] 🌍 Multi-language support
+- [ ] 📱 Mobile app companion
+
+## 🤝 Contributing
+
+Found a bug or have a suggestion? Feel free to:
+
+1. 🐛 [Report Issues](https://github.com/Hxxxz0/Hxxxz0.github.io/issues)
+2. 💡 [Suggest Features](https://github.com/Hxxxz0/Hxxxz0.github.io/discussions)
+3. 🔄 Submit Pull Requests
+
+## 📬 Get in Touch
+
+<div align="center">
+
+**Let's connect and collaborate on exciting AI projects!**
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:202322120230@mail.sdu.edu.cn)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hxxxz0)
+[![Zhihu](https://img.shields.io/badge/Zhihu-0084FF?style=for-the-badge&logo=zhihu&logoColor=white)](https://www.zhihu.com/people/a8bea62e294a4b1c38d7e8180e4ad3bb)
+
+</div>
+
+---
+
+<div align="center">
+
+**🌟 If you find my work interesting, consider giving this repository a star! 🌟**
+
+*"Technology's true value lies not just in theoretical innovation, but in its positive impact on the real world."*
+
+**© 2025 Haozhe Jia | Made with ❤️ and lots of ☕**
+
+</div>

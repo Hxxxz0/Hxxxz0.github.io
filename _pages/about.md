@@ -7,11 +7,19 @@ redirect_from:
   - /about.html
 ---
 
+{% include particle-background.html %}
+{% include dark-mode-toggle.html %}
+{% include music-player.html %}
+
 ## Welcome! 欢迎来到我的个人主页！
+
+{% include typing-effect.html %}
 
 你好，我是**贾浩哲（Haozhe Jia）**，山东大学崇新学堂本科生，目前主要从事**生成模型**、**计算机视觉**、**AI驱动的医疗教育平台**等领域的研究。作为一名计算机科学领域的研究者，我有着广泛的兴趣和深厚的学术背景，特别是在深度学习、自然语言处理、多模态建模及其在医学、机器人等领域的应用方面。
 
 我始终认为，技术的真正价值不仅体现在其理论的创新，更在于它对现实世界的影响。正因此，我在进行基础研究的同时，也注重将研究成果转化为实际应用，尤其是在医疗、教育等领域，通过AI的赋能，提升人类的生活质量与工作效率。
+
+{% include visitor-stats.html %}
 
 ---
 
@@ -95,6 +103,10 @@ redirect_from:
 - **NLP**: Transformer, BERT, GPT
 - **计算机视觉**: 目标检测, 图像分类, 图像生成
 - **强化学习**: PPO, GRPO
+
+{% include skills-bar.html %}
+
+{% include github-3d.html %}
 
 ---
 

@@ -1,0 +1,191 @@
+<!-- Skills Progress Bar -->
+<div class="skills-section">
+  <h3>🚀 Technical Skills</h3>
+  <div class="skills-container">
+    
+    <div class="skill-item">
+      <div class="skill-info">
+        <span class="skill-name">Python</span>
+        <span class="skill-percentage">95%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-skill="95"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-info">
+        <span class="skill-name">PyTorch</span>
+        <span class="skill-percentage">90%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-skill="90"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-info">
+        <span class="skill-name">Deep Learning</span>
+        <span class="skill-percentage">88%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-skill="88"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-info">
+        <span class="skill-name">Computer Vision</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-skill="85"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-info">
+        <span class="skill-name">NLP</span>
+        <span class="skill-percentage">82%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-skill="82"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-info">
+        <span class="skill-name">Machine Learning</span>
+        <span class="skill-percentage">87%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-skill="87"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.skills-section {
+  margin: 3em 0;
+  padding: 2em;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.skills-section h3 {
+  text-align: center;
+  margin-bottom: 2em;
+  color: #2c3e50;
+  font-size: 1.5em;
+}
+
+.skills-container {
+  display: grid;
+  gap: 1.5em;
+}
+
+.skill-item {
+  background: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1em;
+}
+
+.skill-percentage {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1em;
+}
+
+.skill-bar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 10px;
+  width: 0%;
+  transition: width 2s ease-in-out;
+  position: relative;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 1.5em;
+  }
+  
+  .skill-item {
+    padding: 1em;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const skillBars = document.querySelectorAll('.skill-progress');
+  
+  const animateSkills = () => {
+    skillBars.forEach(bar => {
+      const skillLevel = bar.getAttribute('data-skill');
+      bar.style.width = skillLevel + '%';
+    });
+  };
+
+  // Use Intersection Observer to trigger animation when section is visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateSkills();
+        observer.disconnect();
+      }
+    });
+  });
+
+  const skillsSection = document.querySelector('.skills-section');
+  if (skillsSection) {
+    observer.observe(skillsSection);
+  }
+});
+</script> 

@@ -1,0 +1,213 @@
+<!-- Dark Mode Toggle -->
+<div class="theme-controls">
+  <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Dark Mode">
+    <span class="theme-icon" id="theme-icon">🌙</span>
+  </button>
+  <div class="theme-indicator" id="theme-indicator">Light Mode</div>
+</div>
+
+<style>
+.theme-controls {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover::before {
+  transform: scale(1);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  transform: rotate(20deg);
+}
+
+.theme-indicator {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .page__content {
+  background: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-theme .sidebar {
+  background: #2d2d2d !important;
+}
+
+body.dark-theme .masthead {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+}
+
+body.dark-theme .widget {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+}
+
+body.dark-theme .skills-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .skill-item {
+  background: #3a3a3a !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .theme-indicator {
+  background: rgba(45, 45, 45, 0.9) !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .archive__item {
+  background: #2d2d2d !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .list__item article {
+  background: #2d2d2d !important;
+  color: #e0e0e0 !important;
+}
+
+/* Smooth transitions for theme change */
+body, .page__content, .sidebar, .masthead, .widget, .skills-section, .skill-item, .archive__item, .list__item article {
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+@media (max-width: 768px) {
+  .theme-controls {
+    top: 80px;
+    right: 15px;
+  }
+  
+  .theme-toggle-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+  }
+  
+  .theme-indicator {
+    font-size: 0.7em;
+    padding: 6px 10px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeIndicator = document.getElementById('theme-indicator');
+  const body = document.body;
+  
+  // Check for saved theme preference or default to light
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark-theme');
+      themeIcon.textContent = '☀️';
+      themeIndicator.textContent = 'Dark Mode';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark-theme');
+      themeIcon.textContent = '🌙';
+      themeIndicator.textContent = 'Light Mode';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+  
+  // Apply saved theme
+  setTheme(savedTheme);
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    // Add a little animation effect
+    themeToggle.style.transform = 'scale(0.8)';
+    setTimeout(() => {
+      setTheme(newTheme);
+      themeToggle.style.transform = '';
+    }, 150);
+  });
+  
+  // Auto-detect system theme preference
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme')) {
+    setTheme('dark');
+  }
+  
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+});
+</script> 

@@ -1,0 +1,285 @@
+<!-- Visitor Stats and Random Quote -->
+<div class="fun-widgets">
+  
+  <!-- Visitor Counter -->
+  <div class="widget visitor-counter">
+    <div class="widget-icon">👥</div>
+    <div class="widget-content">
+      <h4>Visitors</h4>
+      <div class="counter-display" id="visitorCount">Loading...</div>
+      <p class="counter-label">Total Views</p>
+    </div>
+  </div>
+
+  <!-- Random Quote -->
+  <div class="widget quote-widget">
+    <div class="widget-icon">💡</div>
+    <div class="widget-content">
+      <h4>AI Inspiration</h4>
+      <div class="quote-display" id="randomQuote">
+        <p class="quote-text">Loading quote...</p>
+        <span class="quote-author">- Author</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Current Time -->
+  <div class="widget time-widget">
+    <div class="widget-icon">🕐</div>
+    <div class="widget-content">
+      <h4>Current Time</h4>
+      <div class="time-display" id="currentTime">00:00:00</div>
+      <p class="time-zone">Beijing Time</p>
+    </div>
+  </div>
+
+</div>
+
+<style>
+.fun-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+  margin: 3em 0;
+}
+
+.widget {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.widget::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+.widget:hover::before {
+  animation: shimmer-widget 1.5s ease-in-out;
+}
+
+.widget:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+}
+
+.widget-icon {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  animation: float 3s ease-in-out infinite;
+}
+
+.widget-content h4 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.counter-display {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.counter-label {
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.quote-display {
+  text-align: center;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.quote-author {
+  font-size: 0.9em;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.time-display {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.time-zone {
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer-widget {
+  0% { transform: translateX(-100%) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%) rotate(45deg); opacity: 0; }
+}
+
+@keyframes countUp {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.counter-display.animate {
+  animation: countUp 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .fun-widgets {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+  
+  .widget {
+    padding: 1.5em;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // AI-related quotes
+  const aiQuotes = [
+    {
+      text: "Artificial Intelligence is the new electricity.",
+      author: "Andrew Ng"
+    },
+    {
+      text: "Machine learning is the last invention that humanity will ever need to make.",
+      author: "Nick Bostrom"
+    },
+    {
+      text: "AI is going to change the world more than anything in the history of mankind.",
+      author: "Sundar Pichai"
+    },
+    {
+      text: "The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.",
+      author: "Edsger Dijkstra"
+    },
+    {
+      text: "Intelligence is the ability to adapt to change.",
+      author: "Stephen Hawking"
+    },
+    {
+      text: "Data is the new oil, and AI is the new refinery.",
+      author: "Clive Humby"
+    },
+    {
+      text: "The best way to predict the future is to invent it.",
+      author: "Alan Kay"
+    },
+    {
+      text: "Every kid should learn to code, not because everyone should become a programmer, but because it teaches you how to think.",
+      author: "Steve Jobs"
+    }
+  ];
+
+  // Display random quote
+  function displayRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * aiQuotes.length);
+    const quote = aiQuotes[randomIndex];
+    
+    const quoteText = document.querySelector('.quote-text');
+    const quoteAuthor = document.querySelector('.quote-author');
+    
+    if (quoteText && quoteAuthor) {
+      quoteText.textContent = `"${quote.text}"`;
+      quoteAuthor.textContent = `- ${quote.author}`;
+    }
+  }
+
+  // Update time
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('zh-CN', {
+      timeZone: 'Asia/Shanghai',
+      hour12: false
+    });
+    
+    const timeDisplay = document.getElementById('currentTime');
+    if (timeDisplay) {
+      timeDisplay.textContent = timeString;
+    }
+  }
+
+  // Visitor counter (using localStorage for demo)
+  function updateVisitorCount() {
+    let visits = localStorage.getItem('pageVisits');
+    if (!visits) {
+      visits = 0;
+    }
+    visits = parseInt(visits) + 1;
+    localStorage.setItem('pageVisits', visits);
+    
+    const counterDisplay = document.getElementById('visitorCount');
+    if (counterDisplay) {
+      // Animate the counter
+      let current = 0;
+      const increment = Math.ceil(visits / 50);
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= visits) {
+          current = visits;
+          clearInterval(timer);
+        }
+        counterDisplay.textContent = current.toLocaleString();
+        counterDisplay.classList.add('animate');
+      }, 30);
+    }
+  }
+
+  // Initialize all functions
+  displayRandomQuote();
+  updateTime();
+  updateVisitorCount();
+
+  // Update time every second
+  setInterval(updateTime, 1000);
+
+  // Change quote every 10 seconds
+  setInterval(displayRandomQuote, 10000);
+
+  // Add click handler to quote widget to manually change quote
+  const quoteWidget = document.querySelector('.quote-widget');
+  if (quoteWidget) {
+    quoteWidget.addEventListener('click', displayRandomQuote);
+    quoteWidget.style.cursor = 'pointer';
+    quoteWidget.title = 'Click for a new quote!';
+  }
+});
+</script> 
