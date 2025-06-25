@@ -39,3 +39,238 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Custom styles for enhanced visual appeal */
+
+/* Enhanced typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+}
+
+/* Modern gradient header */
+.masthead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.masthead__inner-wrap {
+  .site-title {
+    color: white !important;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .masthead__menu-item {
+    a {
+      color: rgba(255,255,255,0.9) !important;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: white !important;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+/* Enhanced author profile */
+.sidebar .author__avatar {
+  img {
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.author__bio {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 1em;
+}
+
+/* Modern card design for content */
+.page__content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2.5em;
+  margin-bottom: 2em;
+}
+
+/* Enhanced buttons and links */
+.btn {
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+}
+
+/* Beautiful section dividers */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ddd, transparent);
+  margin: 3em 0;
+}
+
+/* Enhanced code blocks */
+.highlight {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Modern publication cards */
+.list__item {
+  article {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+  }
+}
+
+/* Enhanced portfolio items */
+.archive__item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+}
+
+/* Modern tags and badges */
+.page__taxonomy-item {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 20px;
+  padding: 0.3em 0.8em;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.2em 0.3em 0.2em 0;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* Enhanced emoji styling */
+.page__content {
+  h2, h3 {
+    position: relative;
+    padding-left: 1.5em;
+    
+    &::before {
+      position: absolute;
+      left: 0;
+      font-size: 1.2em;
+    }
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .page__content {
+    padding: 1.5em;
+    border-radius: 8px;
+  }
+  
+  .masthead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Enhanced footer */
+.page__footer {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  
+  a {
+    color: #bdc3c7;
+    
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .masthead,
+  .sidebar,
+  .page__footer {
+    display: none;
+  }
+  
+  .page__content {
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page__content > * {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Enhanced accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .page__content {
+    background: #2c3e50;
+    color: #ecf0f1;
+  }
+  
+  .author__bio {
+    color: #bdc3c7;
+  }
+}

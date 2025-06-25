@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Haozhe Jia"
+title                    : "Haozhe Jia | 贾浩哲"
 title_separator          : "-"
-name                     : &name "贾浩哲"
-description              : &description "personal description"
+name                     : &name "贾浩哲 (Haozhe Jia)"
+description              : &description "Undergraduate Student at Shandong University | AI Researcher focusing on Generative Models, Computer Vision, and AI-driven Medical Education"
 url                      : https://Hxxxz0.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Hxxxz0/Hxxxz0.github.io"
@@ -22,13 +22,13 @@ repository               : "Hxxxz0/Hxxxz0.github.io"
 author:
   # Biographic information
   avatar           : "jhz.png"
-  name             : "贾浩哲"
+  name             : "贾浩哲 (Haozhe Jia)"
   pronouns         : # example: "she/her"  
-  bio              : "Bachelor of Electronic information"
-  location         : "China"
+  bio              : "Undergraduate at Shandong University Chongxin School<br/>AI Researcher | Generative Models | Computer Vision"
+  location         : "Jinan, China"
   employer         : "Shandong University"
   uri              :  "https://Hxxxz0.github.io" # URL
-  email            : "202322120230@mail.sdu.edu.cn" 
+  email            : "202322120230@mail.sdu.edu.cn"
 
   # Academic websites
   #arxiv            : # URL - Update with the correct link to your profile
