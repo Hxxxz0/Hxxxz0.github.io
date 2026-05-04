@@ -1,0 +1,33 @@
+---
+import { siteData } from "../data/site";
+---
+
+<section class="hero" id="top">
+  <div class="hero-text">
+    <h1>
+      {siteData.name}
+      <span>{siteData.nativeName}</span>
+    </h1>
+    <p class="hero-role">
+      {siteData.role} · {siteData.affiliation} · {siteData.location}
+    </p>
+    <p class="hero-bio">{siteData.deck}</p>
+    <div class="hero-links">
+      {siteData.contactLinks.map((item) => (
+        <a class="hero-link" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined}>
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <figure class="hero-portrait">
+    <img
+      src="/me.jpg"
+      width="720"
+      height="720"
+      alt="Portrait of Haozhe Jia"
+      loading="eager"
+    />
+  </figure>
+</section>

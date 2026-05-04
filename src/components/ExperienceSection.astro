@@ -1,0 +1,29 @@
+---
+import { siteData } from "../data/site";
+---
+
+<section class="section experience" id="experience">
+  <header class="section-header">
+    <h2>Experience</h2>
+  </header>
+
+  <div class="experience-list">
+    {siteData.experience.map((entry) => (
+      <article class="exp-card">
+        <div class="exp-card-meta">
+          <time>{entry.dateRange}</time>
+          <span>{entry.location}</span>
+        </div>
+        <div class="exp-card-body">
+          <h3>{entry.role}</h3>
+          <p class="exp-institution">{entry.institution}</p>
+          <ul class="exp-highlights">
+            {entry.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

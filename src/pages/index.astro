@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ResearchSection from "../components/ResearchSection.astro";
+import PublicationsSection from "../components/PublicationsSection.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { siteData } from "../data/site";
+---
+
+<BaseLayout
+  title={`${siteData.name} | ${siteData.role}`}
+  description="Personal academic website for Haozhe Jia — research in embodied AI, diffusion models, and multimodal systems."
+>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span>{siteData.name}</span>
+      <span>{siteData.nativeName}</span>
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <HeroSection />
+    <ResearchSection />
+    <PublicationsSection />
+    <ExperienceSection />
+    <ContactSection />
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

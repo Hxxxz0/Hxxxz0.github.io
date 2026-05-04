@@ -1,0 +1,30 @@
+---
+import { siteData } from "../data/site";
+---
+
+<section class="section publications" id="publications">
+  <header class="section-header">
+    <h2>Selected Publications</h2>
+  </header>
+
+  <div class="publications-grid">
+    {siteData.publications.map((paper) => (
+      <article class="pub-card">
+        <div class="pub-card-meta">
+          <span class="venue">{paper.venue}</span>
+          <span>{paper.role}</span>
+          <span>{paper.dateRange}</span>
+        </div>
+        <div class="pub-card-body">
+          <h3>{paper.title}</h3>
+          <p>{paper.summary}</p>
+          {paper.href && (
+            <a class="inline-link" href={paper.href} target="_blank" rel="noreferrer">
+              View paper
+            </a>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import { siteData } from "../data/site";
+---
+
+<section class="section contact" id="contact">
+  <header class="section-header">
+    <h2>Contact</h2>
+  </header>
+
+  <div class="contact-links">
+    {siteData.contactLinks.map((item) => (
+      <a
+        class="contact-card"
+        href={item.href}
+        target={item.href.startsWith("http") ? "_blank" : undefined}
+        rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+      >
+        <span>{item.label}</span>
+        <span class="contact-arrow" aria-hidden="true">-></span>
+      </a>
+    ))}
+  </div>
+</section>
