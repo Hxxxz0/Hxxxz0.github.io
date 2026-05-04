@@ -93,13 +93,13 @@ export const siteData = {
         "Proposes REPA-P to align denoising features with physics-aware representations, improving physical consistency and out-of-distribution robustness."
     },
     {
-      title: "RMDM: Radio Map Diffusion Model with Physics Informed Guidance",
+      title: "RMDM: Physics-Informed Representation Alignment for Sparse Radio-Map Reconstruction",
       venue: "ACM MM 2025 Oral",
       role: "First author",
       dateRange: "2024.05 - 2024.10",
       summary:
         "Combines a PINN-based field initializer with a diffusion refiner to reconstruct sparse radio maps accurately under physically constrained settings.",
-      href: "https://arxiv.org/abs/2511.02156"
+      href: "https://arxiv.org/abs/2501.19160"
     },
     {
       title: "ECHO: Edge-Cloud Humanoid Orchestration for Language-to-Motion Control",
