@@ -34,10 +34,10 @@ export const siteData = {
   email: "202322120230@mail.sdu.edu.cn",
   introLabel: "Academic homepage",
   headline: "Researching embodied intelligence with generative and multimodal methods.",
-  deck: "I study embodied AI systems for motion generation, robot control, and cross-modal understanding, using diffusion models and aligned representations as core tools.",
+  deck: "I am an undergraduate researcher at Shandong University working on embodied AI, generative motion models, and robot control. I am interested in a simple but stubborn question: how can we make AI-generated motion not only look good on a screen, but also stand up, stay balanced, and actually move a robot? My work explores diffusion models, flow matching, and dynamics-aligned representations for humanoid motion generation, whole-body control, and cross-modal understanding, aiming to bridge language, motion, and physical execution in the real world.",
   bio: [
-    "I am an undergraduate student at Shandong University, affiliated with the School of Information Science and Engineering and the Chongxin Honors Program.",
-    "My recent work centers on embodied intelligence, especially language-to-motion control, text-to-motion generation, and deployable robot systems, alongside research in scientific diffusion and wireless scene modeling."
+    "I am an undergraduate researcher at Shandong University working on embodied AI, generative motion models, and robot control. I am interested in a simple but stubborn question: how can we make AI-generated motion not only look good on a screen, but also stand up, stay balanced, and actually move a robot?",
+    "My work explores diffusion models, flow matching, and dynamics-aligned representations for humanoid motion generation, whole-body control, and cross-modal understanding, aiming to bridge language, motion, and physical execution in the real world."
   ],
   facts: [
     "Research Assistant at HKUST(GZ)",
