@@ -90,7 +90,8 @@ export const siteData = {
       role: "First author",
       dateRange: "2025.10 - 2025.12",
       summary:
-        "Proposes REPA-P to align denoising features with physics-aware representations, improving physical consistency and out-of-distribution robustness."
+        "Proposes REPA-P to align denoising features with physics-aware representations, improving physical consistency and out-of-distribution robustness.",
+      href: "http://arxiv.org/abs/2605.20780"
     },
     {
       title: "RMDM: Physics-Informed Representation Alignment for Sparse Radio-Map Reconstruction",
@@ -103,12 +104,21 @@ export const siteData = {
     },
     {
       title: "ECHO: Edge-Cloud Humanoid Orchestration for Language-to-Motion Control",
-      venue: "Target: IROS",
+      venue: "Under Review",
       role: "First author",
-      dateRange: "2025.10 - present",
+      dateRange: "2026.01 - 2026.04",
       summary:
-        "Builds an edge-cloud language-to-motion system where a diffusion generator proposes robot-native trajectories and a lightweight controller tracks them in simulation and hardware.",
-      href: "https://arxiv.org/pdf/2603.16188"
+        "Edge-cloud architecture for language-to-motion humanoid control: cloud diffusion generates 38-DoF motion references; on-device lightweight controller performs closed-loop tracking. Validated in MuJoCo and on real hardware.",
+      href: "https://echo-phi-eight.vercel.app"
+    },
+    {
+      title: "Before the Body Moves: Learning Anticipatory Joint Intent for Language-Conditioned Humanoid Control",
+      venue: "Under Review",
+      role: "First author",
+      dateRange: "2026.03 - 2026.05",
+      summary:
+        "Proposes DAJI, a hierarchical framework for streaming language-conditioned humanoid control. A future-aware teacher distills Dynamics-Aligned Joint Intent representations encoding support transfer, contact switching, and balance preparation before motion onset. Achieves 94.42% streaming execution success rate on real humanoid hardware.",
+      href: "https://hxxxz0.github.io/DAJI_PAGE/"
     },
     {
       title: "LUMA: Low-Dimension Unified Motion Alignment with Dual-Path Anchoring for Text-to-Motion Diffusion Model",
@@ -167,13 +177,25 @@ export const siteData = {
   ],
   experience: [
     {
+      role: "Embodied AI Algorithm Intern",
+      institution: "LimX Dynamics",
+      location: "Beijing, China",
+      dateRange: "2025.12 - present",
+      highlights: [
+        "Developed ECHO, a language-driven humanoid motion control system with a compact 38-DoF action representation.",
+        "Built a cloud-edge streaming pipeline: cloud diffusion generates motion references; on-device lightweight controller performs closed-loop tracking.",
+        "Validated in MuJoCo simulation and on real humanoid hardware."
+      ]
+    },
+    {
       role: "Research Assistant",
       institution: "Hong Kong University of Science and Technology (Guangzhou)",
       location: "Guangzhou, China",
-      dateRange: "2024.12 - present",
+      dateRange: "2024.12 - 2025.12",
       highlights: [
-        "Leading research and implementation across PhyRMDM, Free-T2M, and LUMA, spanning radio map reconstruction and text-driven human motion generation.",
-        "Responsible for model selection, training pipelines, and ablation design with a strong focus on reproducibility and open implementation."
+        "Led research on PhyRMDM, Free-T2M, and LUMA, spanning radio map reconstruction and text-driven human motion generation.",
+        "Owned the full pipeline from model selection and training to ablation design; all code open-sourced.",
+        "First-author / co-first-author publications at ICML and ACM MM (Oral)."
       ]
     }
   ],

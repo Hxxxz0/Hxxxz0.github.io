@@ -1,0 +1,56 @@
+<section class="section guestbook" id="guestbook">
+  <header class="section-header">
+    <h2>Leave a Note</h2>
+  </header>
+
+  <div class="guestbook-card">
+    <p class="guestbook-intro">
+      Feel free to leave a message or discuss collaboration ideas.
+    </p>
+    <hr class="guestbook-divider" />
+    <div class="giscus-wrapper">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="Hxxxz0/Hxxxz0.github.io"
+        data-repo-id="R_kgDOLvBGrA"
+        data-category="General"
+        data-category-id="DIC_kwDOLvBGrM4C-E2J"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+  </div>
+</section>
+
+<style>
+  .guestbook-card {
+    padding: var(--space-lg);
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--ring);
+  }
+
+  .guestbook-intro {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+  }
+
+  .guestbook-divider {
+    margin: var(--space-md) 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .giscus-wrapper {
+    min-height: 160px;
+  }
+</style>
