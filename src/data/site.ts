@@ -188,7 +188,7 @@ export const siteData = {
       role: "Embodied AI Algorithm Intern",
       institution: "LimX Dynamics",
       location: "Beijing, China",
-      dateRange: "2025.12 - present",
+      dateRange: "2025.12 - 2026.06",
       highlights: [
         "Developed ECHO, a language-driven humanoid motion control system with a compact 38-DoF action representation.",
         "Built a cloud-edge streaming pipeline: cloud diffusion generates motion references; on-device lightweight controller performs closed-loop tracking.",
