@@ -1,5 +1,5 @@
 ---
-import { siteData } from "../data/site";
+import { siteData, type ExperienceEntry } from "../data/site";
 ---
 
 <section class="section experience" id="experience">
@@ -8,20 +8,20 @@ import { siteData } from "../data/site";
   </header>
 
   <div class="experience-list">
-    {siteData.experience.map((entry) => (
+    {siteData.experience.map((entry: ExperienceEntry) => (
       <article class="exp-card">
         <div class="exp-card-meta">
-          <time>{entry.dateRange}</time>
-          <span>{entry.location}</span>
+          {entry.dateRange && <span class="exp-date">{entry.dateRange}</span>}
+          {entry.location && <span>{entry.location}</span>}
         </div>
         <div class="exp-card-body">
           <h3>{entry.role}</h3>
           <p class="exp-institution">{entry.institution}</p>
-          <ul class="exp-highlights">
+          {entry.highlights.length > 0 && <ul class="exp-highlights">
             {entry.highlights.map((highlight) => (
               <li>{highlight}</li>
             ))}
-          </ul>
+          </ul>}
         </div>
       </article>
     ))}

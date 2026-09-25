@@ -1,5 +1,5 @@
 ---
-import { siteData } from "../data/site";
+import { siteData, type BioSegment } from "../data/site";
 ---
 
 <section class="hero" id="top">
@@ -9,9 +9,16 @@ import { siteData } from "../data/site";
       <span>{siteData.nativeName}</span>
     </h1>
     <p class="hero-role">
-      {siteData.role} · {siteData.affiliation} · {siteData.location}
+      <span>{siteData.role}</span>
+      <span class="hero-affiliation">{siteData.affiliation}</span>
     </p>
-    <p class="hero-bio">{siteData.deck}</p>
+    <div class="hero-bio">
+      {siteData.bio.map((paragraph) => (
+        <p>{paragraph.map((segment: BioSegment) => segment.href
+          ? <a href={segment.href} target="_blank" rel="noreferrer">{segment.text}</a>
+          : segment.text)}</p>
+      ))}
+    </div>
     <div class="hero-links">
       {siteData.contactLinks.map((item) => (
         <a class="hero-link" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined}>

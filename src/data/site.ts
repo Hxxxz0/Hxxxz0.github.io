@@ -3,20 +3,30 @@ export interface ResearchArea {
   description: string;
 }
 
+export interface BioSegment {
+  text: string;
+  href?: string;
+}
+
+export interface PublicationLink {
+  label: "Paper" | "Project";
+  href: string;
+}
+
 export interface Publication {
   title: string;
   venue: string;
   role: string;
-  dateRange: string;
+  selectedOrder?: number;
   summary: string;
-  href?: string;
+  links: PublicationLink[];
 }
 
 export interface ExperienceEntry {
   role: string;
   institution: string;
-  location: string;
-  dateRange: string;
+  location?: string;
+  dateRange?: string;
   highlights: string[];
 }
 
@@ -28,154 +38,152 @@ export interface ContactLink {
 export const siteData = {
   name: "Haozhe Jia",
   nativeName: "贾浩哲",
-  role: "Undergraduate Researcher in Embodied AI",
-  affiliation: "Shandong University",
-  location: "Qingdao, China",
+  role: "Incoming Ph.D. Student at Peking University",
+  affiliation: "EPIC Lab · Research Intern at Galbot",
   email: "202322120230@mail.sdu.edu.cn",
-  introLabel: "Academic homepage",
-  headline: "Researching embodied intelligence with generative and multimodal methods.",
-  deck: "I am an undergraduate researcher at Shandong University working on embodied AI, generative motion models, and robot control. I am interested in a simple but stubborn question: how can we make AI-generated motion not only look good on a screen, but also stand up, stay balanced, and actually move a robot? My work explores diffusion models, flow matching, and dynamics-aligned representations for humanoid motion generation, whole-body control, and cross-modal understanding, aiming to bridge language, motion, and physical execution in the real world.",
+  description: "Haozhe Jia, incoming Ph.D. student at Peking University, EPIC Lab member, and research intern at Galbot. Research in humanoid robot learning and control, generative motion modeling, and physics-grounded generative models.",
   bio: [
-    "I am an undergraduate researcher at Shandong University working on embodied AI, generative motion models, and robot control. I am interested in a simple but stubborn question: how can we make AI-generated motion not only look good on a screen, but also stand up, stay balanced, and actually move a robot?",
-    "My work explores diffusion models, flow matching, and dynamics-aligned representations for humanoid motion generation, whole-body control, and cross-modal understanding, aiming to bridge language, motion, and physical execution in the real world."
-  ],
-  facts: [
-    "Research Assistant at HKUST(GZ)",
-    "Focus on embodied AI, diffusion, and multimodal alignment"
-  ],
+    [
+      { text: "I am an incoming Ph.D. student at " },
+      { text: "Peking University", href: "https://english.pku.edu.cn/" },
+      { text: ". I have joined " },
+      { text: "EPIC Lab", href: "https://pku-epic.github.io/" },
+      { text: ", where I work under the supervision of " },
+      { text: "Prof. He Wang", href: "https://hughw19.github.io/" },
+      { text: " and " },
+      { text: "Prof. Li Yi", href: "https://ericyi.github.io/" },
+      { text: ". I am currently a research intern at " },
+      { text: "Galbot", href: "https://www.galbot.com/" },
+      { text: " and an undergraduate at Shandong University." }
+    ],
+    [
+      { text: "My research focuses on humanoid robot learning and control, particularly on connecting generative motion models with physical execution. I am interested in how robots can translate language instructions into coordinated, physically grounded whole-body behaviors. My work spans motion generation, dynamics-aware representations, and language-conditioned humanoid control." }
+    ]
+  ] satisfies BioSegment[][],
   researchAreas: [
     {
-      title: "Text-to-Motion Generation",
-      description:
-        "Designing diffusion-based motion models with stronger semantic alignment, temporal awareness, and frequency-aware supervision."
+      title: "Humanoid Learning & Control",
+      description: "Translating language instructions into coordinated whole-body behaviors through dynamics-aware representations and robot control."
     },
     {
-      title: "Scientific and Physics-Informed Diffusion",
-      description:
-        "Studying representation alignment and physically grounded guidance so diffusion models generalize beyond surface statistical shortcuts."
+      title: "Generative Motion Modeling",
+      description: "Learning language-conditioned motion representations and generative models for expressive and controllable movement."
     },
     {
-      title: "Wireless Scene Modeling",
-      description:
-        "Building efficient radio map reconstruction frameworks with diffusion and flow matching under sparse measurements and noisy conditions."
-    },
-    {
-      title: "Embodied Control Systems",
-      description:
-        "Developing deployable language-to-motion pipelines for humanoid robots with compact motion representations and edge-cloud orchestration."
+      title: "Physics-Grounded Generative Models",
+      description: "Incorporating physical structure into generative modeling to improve consistency and generalization."
     }
-  ],
+  ] satisfies ResearchArea[],
   publications: [
     {
       title: "ANT: Adaptive Neural Temporal-Aware Text-to-Motion Model",
+      selectedOrder: 4,
       venue: "ACM MM 2025",
       role: "Co-first author",
-      dateRange: "2025.03 - 2025.06",
       summary:
         "Introduces step-aware temporal modulation and late-stage CFG reduction for diffusion motion models, improving semantic alignment and retrieval performance.",
-      href: "https://arxiv.org/abs/2506.02452"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2506.02452" }]
     },
     {
       title: "DCTdiff: Intriguing Properties of Image Generative Modeling in the DCT Space",
       venue: "ICML 2025",
       role: "Second co-author",
-      dateRange: "2024.08 - 2024.12",
       summary:
         "Develops an end-to-end diffusion model in DCT space for higher-resolution image generation with stronger efficiency and spectral interpretability.",
-      href: "https://arxiv.org/abs/2412.15032"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2412.15032" }]
     },
     {
       title: "Learning to Think in Physics: Breaking Shortcut Learning in Scientific Diffusion via Representation Alignment",
+      selectedOrder: 3,
       venue: "ICML 2026",
       role: "First author",
-      dateRange: "2025.10 - 2025.12",
       summary:
         "Proposes REPA-P to align denoising features with physics-aware representations, improving physical consistency and out-of-distribution robustness.",
-      href: "http://arxiv.org/abs/2605.20780"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2605.20780" }]
     },
     {
       title: "RMDM: Physics-Informed Representation Alignment for Sparse Radio-Map Reconstruction",
+      selectedOrder: 5,
       venue: "ACM MM 2025 Oral",
       role: "First author",
-      dateRange: "2024.05 - 2024.10",
       summary:
         "Combines a PINN-based field initializer with a diffusion refiner to reconstruct sparse radio maps accurately under physically constrained settings.",
-      href: "https://arxiv.org/abs/2501.19160"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2501.19160" }]
     },
     {
       title: "ECHO: Edge-Cloud Humanoid Orchestration for Language-to-Motion Control",
+      selectedOrder: 2,
       venue: "Under Review",
       role: "First author",
-      dateRange: "2026.01 - 2026.04",
       summary:
-        "Edge-cloud architecture for language-to-motion humanoid control: cloud diffusion generates 38-DoF motion references; on-device lightweight controller performs closed-loop tracking. Validated in MuJoCo and on real hardware.",
-      href: "https://echo-phi-eight.vercel.app"
+        "Connects cloud-based motion generation with on-device closed-loop tracking for language-to-motion humanoid control, validated in simulation and on real hardware.",
+      links: [{ label: "Project", href: "https://echo-phi-eight.vercel.app" }]
     },
     {
       title: "Before the Body Moves: Learning Anticipatory Joint Intent for Language-Conditioned Humanoid Control",
+      selectedOrder: 1,
       venue: "Under Review",
       role: "First author",
-      dateRange: "2026.03 - 2026.05",
       summary:
-        "Proposes DAJI, a hierarchical framework for streaming language-conditioned humanoid control. A future-aware teacher distills Dynamics-Aligned Joint Intent representations encoding support transfer, contact switching, and balance preparation before motion onset. Achieves 94.42% streaming execution success rate on real humanoid hardware.",
-      href: "https://hxxxz0.github.io/DAJI_PAGE/"
+        "Introduces dynamics-aligned joint intent representations that anticipate support transfer, contact switching, and balance preparation for streaming language-conditioned humanoid control.",
+      links: [{ label: "Project", href: "https://hxxxz0.github.io/DAJI_PAGE/" }]
     },
     {
       title: "LUMA: Low-Dimension Unified Motion Alignment with Dual-Path Anchoring for Text-to-Motion Diffusion Model",
       venue: "Under review at ECCV",
       role: "First author",
-      dateRange: "2025.06 - 2025.08",
       summary:
         "Uses temporal semantic anchors and low-frequency motion anchors to improve deep U-Net alignment, gradient flow, and convergence in diffusion motion synthesis.",
-      href: "https://arxiv.org/abs/2509.25304"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2509.25304" }]
     },
     {
       title: "Towards Better Evaluation Metrics for Text-to-Motion Generation",
       venue: "WWW 2026",
       role: "Co-first author",
-      dateRange: "2025.05 - 2025.07",
       summary:
         "Introduces OTMS and MMMD, two evaluation metrics designed to better correlate text-to-motion quality with human judgment.",
-      href: "https://arxiv.org/abs/2511.02987"
+      links: [{ label: "Paper", href: "https://doi.org/10.1145/3774905.3794682" }]
     },
     {
       title: "POLARIS: Projection-Orthogonal Least Squares for Robust and Adaptive Inversion in Diffusion Models",
       venue: "arXiv preprint",
       role: "Collaborating author",
-      dateRange: "2025.03 - 2025.06",
       summary:
         "Derives a theoretically grounded projection schedule for diffusion inversion, improving reconstruction quality without substantial extra computation.",
-      href: "https://arxiv.org/abs/2512.00369"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2512.00369" }]
     },
     {
       title: "RadioFlow: Efficient Radio Map Construction Framework with Flow Matching",
       venue: "Under review at TCNN",
       role: "First author",
-      dateRange: "2025.02 - 2025.06",
       summary:
         "Uses deterministic flow matching for fast radio map construction, reducing parameter count and inference time while maintaining reconstruction quality.",
-      href: "https://arxiv.org/abs/2510.09314"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2510.09314" }]
     },
     {
       title: "Free-T2M: Frequency Enhanced Text-to-Motion Diffusion Model With Consistency Loss",
       venue: "Under review at ICRA",
       role: "First author",
-      dateRange: "2024.09 - 2025.03",
       summary:
         "Introduces frequency-aware consistency supervision to stabilize motion denoising and improve semantic fidelity in diffusion-based text-to-motion generation.",
-      href: "https://arxiv.org/abs/2501.18232"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2501.18232" }]
     },
     {
       title: "Guided Path Sampling: Steering Diffusion Models Back on Track with Principled Path Guidance",
       venue: "WWW 2026",
       role: "Collaborating author",
-      dateRange: "2024.09 - 2025.02",
       summary:
         "Applies manifold-aware interpolation and dynamic guidance schedules to keep diffusion sampling closer to valid data trajectories.",
-      href: "https://arxiv.org/abs/2512.22881"
+      links: [{ label: "Paper", href: "https://arxiv.org/abs/2512.22881" }]
     }
-  ],
+  ] satisfies Publication[],
   experience: [
+    {
+      role: "Research Intern",
+      institution: "Galbot",
+      dateRange: "Current",
+      highlights: []
+    },
     {
       role: "Embodied AI Algorithm Intern",
       institution: "LimX Dynamics",
@@ -198,7 +206,7 @@ export const siteData = {
         "First-author / co-first-author publications at ICML and ACM MM (Oral)."
       ]
     }
-  ],
+  ] satisfies ExperienceEntry[],
   contactLinks: [
     {
       label: "Email",
